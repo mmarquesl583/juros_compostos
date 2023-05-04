@@ -14,7 +14,7 @@
 
 <style>
     input{
-        width: 55%;
+        width: 76%;
         height: 32px;
         padding: 0;
         border: 1px solid black;
@@ -38,7 +38,6 @@
         justify-content: initial;
         align-items: center;
         padding-left: 10px;
-        width: 13pc;
         background-color: white;
     }
 </style>
