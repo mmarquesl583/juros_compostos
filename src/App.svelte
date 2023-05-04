@@ -26,7 +26,7 @@
     datasets: [
       {
         data: [1, 2],
-        backgroundColor: ["red", "blue"],
+        backgroundColor: ['#3552b9', '#009c49'],
       }
     ],
   }
@@ -37,12 +37,12 @@
       {
         label: 'Valor investido',
         data: investido,
-        backgroundColor: ['red']
+        backgroundColor: ['#3552b9']
       },
       {
         label: 'Total em juros',
         data: juros_mensal,
-        backgroundColor: ['blue']
+        backgroundColor: ['#009c49']
       }
     ]
   };
@@ -106,9 +106,9 @@
     <h2>RESULTADO:</h2>
   </div>
   <div style="display: flex;">
-    <Card title="Valor total final" bind:result={ total_final_formatado }/>
-    <Card title="Valor total investido" bind:result={ total_investido_formatado }/>
-    <Card title="Total em juros" bind:result={ total_juros_formatado }/>
+    <Card title="Valor total final" bind:result={ total_final_formatado } color="green"/>
+    <Card title="Valor total investido" bind:result={ total_investido_formatado } color="blue"/>
+    <Card title="Total em juros" bind:result={ total_juros_formatado } color="green"/>
   </div>
   {#if chart}
   <div style="height:350px; display:flex; justify-content:center; align-items:center; margin-top:35px">

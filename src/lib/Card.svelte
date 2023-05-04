@@ -1,11 +1,12 @@
 <script>
     export let title = ""
     export let result
+    export let color
 </script>
 
 <div class="card">
-    <span> { title + ":"} </span>
-    <span> { result } </span>
+    <span>  { title + ":"} </span>
+    <span  style="color: {color}; font-size: x-large;"><strong> { result } </strong></span>
 </div>
 
 <style>
