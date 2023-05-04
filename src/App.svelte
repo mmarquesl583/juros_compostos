@@ -111,7 +111,7 @@
     <Card title="Total em juros" bind:result={ total_juros_formatado }/>
   </div>
   {#if chart}
-    <div style="height:350px; display:flex; justify-content:center; align-items:center; margin-top:35px">
+  <div style="height:350px; display:flex; justify-content:center; align-items:center; margin-top:35px">
       <ChartPie bind:data={ data_pie } bind:this={ chart } />
       <ChartBar bind:data={ data_bar } bind:this={ chart } />
     </div>

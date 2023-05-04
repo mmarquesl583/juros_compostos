@@ -14,7 +14,7 @@
 
 <style>
     input{
-        width: 76%;
+        width: 380px;
         height: 32px;
         padding: 0;
         border: 1px solid black;
@@ -30,6 +30,7 @@
         width: 50%;
     }
     .left{
+        width: 115px;
         border: 1px solid black;
         border-radius: 15px 0 0 15px;
         border-right: none;
