@@ -6,27 +6,29 @@
   import ChartBar from "./lib/ChartBar.svelte";
   import { to_number } from "svelte/internal";
 
-  let val_mensal = ""
-  let val_inicial = ""
-  let periodo = ""
-  let taxa = ""
-  let meses = ""
-  let investido = ""
-  let juros_mensal = ""
-  let chart = false
+  let total_investido_formatado = ""
+  let total_final_formatado = ""
+  let total_juros_formatado = ""
   let total_investido = ""
+  let juros_mensal = ""
+  let green = "#009c49"
+  let blue = "#3552b9"
+  let val_inicial = ""
   let total_final = ""
   let total_juros = ""
-  let total_investido_formatado = ""
-  let total_juros_formatado = ""
-  let total_final_formatado = ""
+  let val_mensal = ""
+  let investido = ""
+  let periodo = ""
+  let chart = true
+  let meses = ""
+  let taxa = ""
 
   $: data_pie = {
     labels: ["Investimento", "Juros"],
     datasets: [
       {
-        data: [1, 2],
-        backgroundColor: ['#3552b9', '#009c49'],
+        data: [total_investido, total_juros],
+        backgroundColor: [blue, green],
       }
     ],
   }
@@ -37,12 +39,12 @@
       {
         label: 'Valor investido',
         data: investido,
-        backgroundColor: ['#3552b9']
+        backgroundColor: [blue]
       },
       {
         label: 'Total em juros',
         data: juros_mensal,
-        backgroundColor: ['#009c49']
+        backgroundColor: [green]
       }
     ]
   };
@@ -60,7 +62,6 @@
       total_investido_formatado = format(total_investido)
       total_juros_formatado = format(total_juros)
       data_pie = update_chart()
-      console.log(data_pie)
     }
   }
 
@@ -85,11 +86,10 @@
       labels: ['Investimento', 'Juros'],
       datasets: [{
         data: [total_investido, total_juros],
-        backgroundColor: ['red', 'blue']
+        backgroundColor: [blue, green]
       }]
     };
   }
-
 </script>
 
 <main>
@@ -111,9 +111,9 @@
     <Card title="Total em juros" bind:result={ total_juros_formatado } color="green"/>
   </div>
   {#if chart}
-  <div style="height:350px; display:flex; justify-content:center; align-items:center; margin-top:35px">
-      <ChartPie bind:data={ data_pie } bind:this={ chart } />
-      <ChartBar bind:data={ data_bar } bind:this={ chart } />
+    <div style="height:350px; display:flex; justify-content:center; align-items:center; margin-top:35px">
+        <ChartPie bind:data={ data_pie } />
+        <ChartBar bind:data={ data_bar } />
     </div>
   {/if}
 </main>
